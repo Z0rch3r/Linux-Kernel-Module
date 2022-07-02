@@ -9,7 +9,7 @@ ifneq ($(KERNELRELEASE),)
 # line; invoke the kernel build system.
 else
 	KERNELDIR ?= /lib/modules/$(shell uname -r)/build
- 	PWD := "/home/zorcher/all/projects/linuxkernelmodule" 
+ 	PWD := $(shell pwd)
 default:
 	make -C $(KERNELDIR) M=$(PWD) modules
 endif
